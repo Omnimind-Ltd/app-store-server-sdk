@@ -1,4 +1,4 @@
-App Store Server API <a href="https://developer.apple.com/documentation/appstoreserverapi">https://developer.apple.com/documentation/appstoreserverapi</a>
+Apple App Store Server API <a href="https://developer.apple.com/documentation/appstoreserverapi">https://developer.apple.com/documentation/appstoreserverapi</a>
 
 ## Features
 
