@@ -16,7 +16,13 @@ void main() async {
 
   var api = AppStoreServerAPI(appStoreHttpClient);
 
-  var statusResponse = await api.getAllSubscriptionStatuses('1000000907113638');
-  var historyResponse = await api.getTransactionHistory('1000000907113638');
-  var refundLookupResponse = await api.getRefundHistory('1000000907113638');
+  try {
+    var statusResponse =
+        await api.getAllSubscriptionStatuses('1000000907113638');
+    var historyResponse = await api.getTransactionHistory('1000000907113638');
+    var refundLookupResponse = await api.getRefundHistory('1000000907113638');
+  } on ApiException catch (e) {
+    print('Error code ${e.error?.errorCode}');
+    print('Error message ${e.error?.errorMessage}');
+  }
 }
