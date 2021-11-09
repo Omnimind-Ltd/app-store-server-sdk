@@ -53,6 +53,15 @@ void main() {
     expect(response.data.length, 1);
     expect(response.data.first.lastTransactions.length, 1);
     expect(response.data.first.lastTransactions.first.status, 2);
+
+    expect(
+        response.data.first.lastTransactions.first.renewalInfo
+            .originalTransactionId,
+        '1000000906235058');
+    expect(
+        response.data.first.lastTransactions.first.transactionInfo
+            .originalTransactionId,
+        '1000000906235058');
   });
 
   test('Test get transaction history', () async {
