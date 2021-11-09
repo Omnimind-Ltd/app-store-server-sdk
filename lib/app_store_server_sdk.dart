@@ -14,4 +14,12 @@
 library app_store_server_sdk;
 
 export 'src/app_store_server_api.dart';
+export 'src/exception/api_exception.dart';
 export 'src/io/app_store_server_http_client.dart';
+export 'src/model/api_error.dart';
+export 'src/model/consumption_request.dart';
+export 'src/model/extend_renewal_date.dart';
+export 'src/model/history_response.dart';
+export 'src/model/order_lookup_response.dart';
+export 'src/model/refund_lookup_response.dart';
+export 'src/model/status_response.dart';
