@@ -75,7 +75,7 @@ JWSRenewalInfoDecodedPayload _$JWSRenewalInfoDecodedPayloadFromJson(
       json['autoRenewStatus'] as int,
       json['expirationIntent'] as int?,
       json['gracePeriodExpiresDate'] as String?,
-      json['isInBillingRetryPeriod'] as bool,
+      json['isInBillingRetryPeriod'] as bool?,
       json['offerIdentifier'] as String?,
       json['offerType'] as int?,
       json['originalTransactionId'] as String,
@@ -99,7 +99,7 @@ Map<String, dynamic> _$JWSRenewalInfoDecodedPayloadToJson(
 
   writeNotNull('expirationIntent', instance.expirationIntent);
   writeNotNull('gracePeriodExpiresDate', instance.gracePeriodExpiresDate);
-  val['isInBillingRetryPeriod'] = instance.isInBillingRetryPeriod;
+  writeNotNull('isInBillingRetryPeriod', instance.isInBillingRetryPeriod);
   writeNotNull('offerIdentifier', instance.offerIdentifier);
   writeNotNull('offerType', instance.offerType);
   val['originalTransactionId'] = instance.originalTransactionId;

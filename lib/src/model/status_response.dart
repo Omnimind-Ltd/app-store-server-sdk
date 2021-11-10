@@ -113,7 +113,7 @@ class JWSRenewalInfoDecodedPayload {
   final String? gracePeriodExpiresDate;
 
   /// The Boolean value that indicates whether the App Store is attempting to automatically renew an expired subscription.
-  final bool isInBillingRetryPeriod;
+  final bool? isInBillingRetryPeriod;
 
   /// The promo code or the promotional offer identifier.
   final String? offerIdentifier;
