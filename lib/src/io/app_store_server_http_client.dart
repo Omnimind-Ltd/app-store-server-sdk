@@ -115,8 +115,8 @@ class AppStoreServerHttpClient extends http.BaseClient {
     Object? body,
     Encoding? encoding,
   }) async {
-    if (jwt == null || !(await _verifyJWT(jwt!))) {
-      jwt = _generateJWT();
+    if (jwt == null || !(await verifyJWT(jwt!))) {
+      jwt = generateJWT();
     }
 
     headers ??= <String, String>{};
@@ -176,9 +176,9 @@ class AppStoreServerHttpClient extends http.BaseClient {
     throw ApiException(response.statusCode, response: response.body);
   }
 
-  Future<bool> _verifyJWT(String key) async {
+  Future<bool> verifyJWT(String key) async {
     var token = JsonWebToken.unverified(key);
-    var webKey = new JsonWebKey.fromPem(appStoreEnvironment.privateKey,
+    var webKey = JsonWebKey.fromPem(appStoreEnvironment.privateKey,
         keyId: appStoreEnvironment.keyId);
     var keyStore = JsonWebKeyStore()..addKey(webKey);
     var valid = await token.verify(keyStore);
@@ -190,7 +190,7 @@ class AppStoreServerHttpClient extends http.BaseClient {
     return valid;
   }
 
-  String _generateJWT() {
+  String generateJWT() {
     var time = DateTime.now();
 
     var claims = JsonWebTokenClaims.fromJson({
