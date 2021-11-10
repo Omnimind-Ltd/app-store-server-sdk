@@ -180,7 +180,7 @@ class JWSTransactionDecodedPayload {
   final String bundleId;
 
   /// The UNIX time, in milliseconds, the subscription expires or renews.
-  final int expiresDate;
+  final int? expiresDate;
 
   /// A string that describes whether the transaction was purchased by the user, or is available to them through Family Sharing.
   final String? inAppOwnershipType;
@@ -216,7 +216,7 @@ class JWSTransactionDecodedPayload {
   final int signedDate;
 
   /// The identifier of the subscription group the subscription belongs to.
-  final String subscriptionGroupIdentifier;
+  final String? subscriptionGroupIdentifier;
 
   /// The unique identifier of the transaction.
   final String transactionId;

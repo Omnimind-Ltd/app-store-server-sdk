@@ -114,7 +114,7 @@ JWSTransactionDecodedPayload _$JWSTransactionDecodedPayloadFromJson(
     JWSTransactionDecodedPayload(
       json['appAccountToken'] as String?,
       json['bundleId'] as String,
-      json['expiresDate'] as int,
+      json['expiresDate'] as int?,
       json['inAppOwnershipType'] as String?,
       json['isUpgraded'] as bool?,
       json['offerIdentifier'] as String?,
@@ -126,7 +126,7 @@ JWSTransactionDecodedPayload _$JWSTransactionDecodedPayloadFromJson(
       json['quantity'] as int?,
       json['revocationDate'] as int?,
       json['signedDate'] as int,
-      json['subscriptionGroupIdentifier'] as String,
+      json['subscriptionGroupIdentifier'] as String?,
       json['transactionId'] as String,
       json['type'] as String,
       json['webOrderLineItemId'] as String?,
@@ -144,7 +144,7 @@ Map<String, dynamic> _$JWSTransactionDecodedPayloadToJson(
 
   writeNotNull('appAccountToken', instance.appAccountToken);
   val['bundleId'] = instance.bundleId;
-  val['expiresDate'] = instance.expiresDate;
+  writeNotNull('expiresDate', instance.expiresDate);
   writeNotNull('inAppOwnershipType', instance.inAppOwnershipType);
   writeNotNull('isUpgraded', instance.isUpgraded);
   writeNotNull('offerIdentifier', instance.offerIdentifier);
@@ -156,7 +156,8 @@ Map<String, dynamic> _$JWSTransactionDecodedPayloadToJson(
   writeNotNull('quantity', instance.quantity);
   writeNotNull('revocationDate', instance.revocationDate);
   val['signedDate'] = instance.signedDate;
-  val['subscriptionGroupIdentifier'] = instance.subscriptionGroupIdentifier;
+  writeNotNull(
+      'subscriptionGroupIdentifier', instance.subscriptionGroupIdentifier);
   val['transactionId'] = instance.transactionId;
   val['type'] = instance.type;
   writeNotNull('webOrderLineItemId', instance.webOrderLineItemId);
