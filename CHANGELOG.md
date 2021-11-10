@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.1.6
+- Bug fix: made some attributes nullable
+
 ## 1.1.5
 - Bug fix: made an attribute nullable
 
