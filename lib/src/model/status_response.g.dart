@@ -73,7 +73,7 @@ JWSRenewalInfoDecodedPayload _$JWSRenewalInfoDecodedPayloadFromJson(
     JWSRenewalInfoDecodedPayload(
       json['autoRenewProductId'] as String,
       json['autoRenewStatus'] as int,
-      json['expirationIntent'] as int,
+      json['expirationIntent'] as int?,
       json['gracePeriodExpiresDate'] as String?,
       json['isInBillingRetryPeriod'] as bool,
       json['offerIdentifier'] as String?,
@@ -89,7 +89,6 @@ Map<String, dynamic> _$JWSRenewalInfoDecodedPayloadToJson(
   final val = <String, dynamic>{
     'autoRenewProductId': instance.autoRenewProductId,
     'autoRenewStatus': instance.autoRenewStatus,
-    'expirationIntent': instance.expirationIntent,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -98,6 +97,7 @@ Map<String, dynamic> _$JWSRenewalInfoDecodedPayloadToJson(
     }
   }
 
+  writeNotNull('expirationIntent', instance.expirationIntent);
   writeNotNull('gracePeriodExpiresDate', instance.gracePeriodExpiresDate);
   val['isInBillingRetryPeriod'] = instance.isInBillingRetryPeriod;
   writeNotNull('offerIdentifier', instance.offerIdentifier);
@@ -115,7 +115,7 @@ JWSTransactionDecodedPayload _$JWSTransactionDecodedPayloadFromJson(
       json['appAccountToken'] as String?,
       json['bundleId'] as String,
       json['expiresDate'] as int,
-      json['inAppOwnershipType'] as String,
+      json['inAppOwnershipType'] as String?,
       json['isUpgraded'] as bool?,
       json['offerIdentifier'] as String?,
       json['offerType'] as String?,
@@ -123,13 +123,13 @@ JWSTransactionDecodedPayload _$JWSTransactionDecodedPayloadFromJson(
       json['originalTransactionId'] as String,
       json['productId'] as String,
       json['purchaseDate'] as int,
-      json['quantity'] as int,
+      json['quantity'] as int?,
       json['revocationDate'] as int?,
       json['signedDate'] as int,
       json['subscriptionGroupIdentifier'] as String,
       json['transactionId'] as String,
       json['type'] as String,
-      json['webOrderLineItemId'] as String,
+      json['webOrderLineItemId'] as String?,
     );
 
 Map<String, dynamic> _$JWSTransactionDecodedPayloadToJson(
@@ -145,7 +145,7 @@ Map<String, dynamic> _$JWSTransactionDecodedPayloadToJson(
   writeNotNull('appAccountToken', instance.appAccountToken);
   val['bundleId'] = instance.bundleId;
   val['expiresDate'] = instance.expiresDate;
-  val['inAppOwnershipType'] = instance.inAppOwnershipType;
+  writeNotNull('inAppOwnershipType', instance.inAppOwnershipType);
   writeNotNull('isUpgraded', instance.isUpgraded);
   writeNotNull('offerIdentifier', instance.offerIdentifier);
   writeNotNull('offerType', instance.offerType);
@@ -153,12 +153,12 @@ Map<String, dynamic> _$JWSTransactionDecodedPayloadToJson(
   val['originalTransactionId'] = instance.originalTransactionId;
   val['productId'] = instance.productId;
   val['purchaseDate'] = instance.purchaseDate;
-  val['quantity'] = instance.quantity;
+  writeNotNull('quantity', instance.quantity);
   writeNotNull('revocationDate', instance.revocationDate);
   val['signedDate'] = instance.signedDate;
   val['subscriptionGroupIdentifier'] = instance.subscriptionGroupIdentifier;
   val['transactionId'] = instance.transactionId;
   val['type'] = instance.type;
-  val['webOrderLineItemId'] = instance.webOrderLineItemId;
+  writeNotNull('webOrderLineItemId', instance.webOrderLineItemId);
   return val;
 }

@@ -107,7 +107,7 @@ class JWSRenewalInfoDecodedPayload {
   final int autoRenewStatus;
 
   /// The reason the subscription expired.
-  final int expirationIntent;
+  final int? expirationIntent;
 
   /// The time when the grace period for subscription renewals expires.
   final String? gracePeriodExpiresDate;
@@ -173,7 +173,7 @@ class JWSRenewalInfoDecodedPayload {
 /// A decoded payload containing transaction information.
 @JsonSerializable()
 class JWSTransactionDecodedPayload {
-  /// he UUID you created to identify the user’s in-app account when they made the purchase. If your app doesn’t provide an appAccountToken, this string is empty.
+  /// The UUID you created to identify the user’s in-app account when they made the purchase. If your app doesn’t provide an appAccountToken, this string is empty.
   final String? appAccountToken;
 
   /// The bundle identifier of the app.
@@ -183,7 +183,7 @@ class JWSTransactionDecodedPayload {
   final int expiresDate;
 
   /// A string that describes whether the transaction was purchased by the user, or is available to them through Family Sharing.
-  final String inAppOwnershipType;
+  final String? inAppOwnershipType;
 
   /// The Boolean value that indicates whether the user upgraded to another subscription.
   final bool? isUpgraded;
@@ -207,7 +207,7 @@ class JWSTransactionDecodedPayload {
   final int purchaseDate;
 
   /// The number of consumable products the user purchased.
-  final int quantity;
+  final int? quantity;
 
   /// The UNIX time, in milliseconds, that Apple Support refunded a transaction.
   final int? revocationDate;
@@ -225,7 +225,7 @@ class JWSTransactionDecodedPayload {
   final String type;
 
   /// A unique ID that identifies subscription purchase events across devices, including subscription renewals.
-  final String webOrderLineItemId;
+  final String? webOrderLineItemId;
 
   JWSTransactionDecodedPayload(
       this.appAccountToken,
