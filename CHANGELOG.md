@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.1.2
+- added errorCode consts
+
 ## 1.1.1
 - make AppStoreServerHttpClient.verifyJWT(), AppStoreServerHttpClient.generateJWT() public
 
