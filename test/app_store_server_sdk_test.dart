@@ -16,23 +16,24 @@ aF6YE7ad
 
 void main() {
   late AppStoreServerAPI _api;
+  late MockHttpClient _mockHttpClient;
 
   setUp(() {
-    var mockHttpClient = MockHttpClient(MockHttpClientHandler());
+    _mockHttpClient = MockHttpClient(MockHttpClientHandler());
 
-    mockHttpClient.addHandler(
+    _mockHttpClient.addHandler(
         '/inApps/v1/subscriptions/1000000907113638', 'GET', (request) async {
       var json = await getJson('get_all_subscription_statuses.json');
       return Response(json, HttpStatus.created);
     });
 
-    mockHttpClient.addHandler('/inApps/v1/history/1000000907113638', 'GET',
+    _mockHttpClient.addHandler('/inApps/v1/history/1000000907113638', 'GET',
         (request) async {
       var json = await getJson('get_transaction_history.json');
       return Response(json, HttpStatus.created);
     });
 
-    mockHttpClient.addHandler(
+    _mockHttpClient.addHandler(
         '/inApps/v1/refund/lookup/1000000907113638', 'GET', (request) async {
       var json = await getJson('get_refund_history.json');
       return Response(json, HttpStatus.created);
@@ -45,7 +46,32 @@ void main() {
       privateKey: privateKey,
     );
     _api = AppStoreServerAPI(
-        AppStoreServerHttpClient(appStoreEnvironment, client: mockHttpClient));
+        AppStoreServerHttpClient(appStoreEnvironment, client: _mockHttpClient));
+  });
+
+  test('Test token handling', () async {
+    var appStoreEnvironment = AppStoreEnvironment.sandbox(
+      bundleId: 'com.test.app',
+      issuerId: 'ee1625de-a85c-927e-9103-1562b6h9ee78',
+      keyId: 'P6YL2679TH',
+      privateKey: privateKey,
+    );
+
+    var jwt = 'invalid_token';
+
+    var httpClient = AppStoreServerHttpClient(
+      appStoreEnvironment,
+      client: _mockHttpClient,
+      jwt: jwt,
+      jwtTokenUpdatedCallback: (token) {
+        jwt = token;
+      },
+    );
+
+    var api = AppStoreServerAPI(httpClient);
+    await api.getAllSubscriptionStatuses('1000000907113638');
+    expect(jwt != 'invalid_token', true);
+    expect(await httpClient.verifyJWT(jwt), true);
   });
 
   test('Test get all subscription statuses', () async {
