@@ -1,7 +1,10 @@
 # CHANGELOG
 
+## 1.1.5
+- Bug fix: made an attribute nullable
+
 ## 1.1.4
-- made some attributes nullable
+- Bug fix: made some attributes nullable
 
 ## 1.1.2
 - added errorCode consts
