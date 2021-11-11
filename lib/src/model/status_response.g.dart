@@ -9,7 +9,7 @@ part of 'status_response.dart';
 StatusResponse _$StatusResponseFromJson(Map<String, dynamic> json) =>
     StatusResponse(
       json['environment'] as String,
-      json['appAppleId'] as String?,
+      json['appAppleId'] as int?,
       json['bundleId'] as String,
       (json['data'] as List<dynamic>)
           .map((e) => SubscriptionGroupIdentifierItem.fromJson(

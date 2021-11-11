@@ -12,7 +12,7 @@ class StatusResponse {
   final String environment;
 
   /// The app's identifier in the App Store.
-  final String? appAppleId;
+  final int? appAppleId;
 
   /// The bundle identifier of the app.
   final String bundleId;
