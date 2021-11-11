@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.1.7
+- Bug fix: fix appAppleId type. String -> int
+
 ## 1.1.6
 - Bug fix: made some attributes nullable
 
