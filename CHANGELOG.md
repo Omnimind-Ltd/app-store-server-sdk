@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.1.7
+## 1.1.8
 - Fix static analysis issues
 
 ## 1.1.7
