@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:app_store_server_sdk/app_store_server_sdk.dart';
+import 'package:app_store_server_sdk/src/io/app_store_server_http_client.dart';
 import 'package:app_store_server_sdk/src/model/consumption_request.dart';
 import 'package:app_store_server_sdk/src/model/extend_renewal_date.dart';
 import 'package:app_store_server_sdk/src/model/order_lookup_response.dart';

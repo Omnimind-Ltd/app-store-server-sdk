@@ -19,8 +19,11 @@ void main() async {
   try {
     var statusResponse =
         await api.getAllSubscriptionStatuses('1000000907113638');
+    print(statusResponse);
     var historyResponse = await api.getTransactionHistory('1000000907113638');
+    print(historyResponse);
     var refundLookupResponse = await api.getRefundHistory('1000000907113638');
+    print(refundLookupResponse);
   } on ApiException catch (e) {
     print('Error code ${e.error?.errorCode}');
     print('Error message ${e.error?.errorMessage}');
