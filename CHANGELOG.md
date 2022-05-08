@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.1.9
+- Make OrderLookupResponse.signedTransactions nullable
+
 ## 1.1.8
 - Fix static analysis issues
 
