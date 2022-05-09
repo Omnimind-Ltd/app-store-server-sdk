@@ -22,6 +22,10 @@ Follow the
 instructions <a href="https://developer.apple.com/documentation/appstoreserverapi/creating_api_keys_to_use_with_the_app_store_server_api">
 here</a> to create API keys to use with the App Store Server API
 
+Guide to validating receipts with the App Store
+<a href="https://developer.apple.com/documentation/storekit/original_api_for_in-app_purchase/validating_receipts_with_the_app_store">
+here</a>
+
 ## Usage
 
 Check out the <a href="https://pub.dev/packages/app_store_server_sdk/example">Examples</a>
