@@ -11,7 +11,7 @@ class VerifyReceiptResponse {
 
   /// The environment for which the receipt was generated.
   /// Possible values: Sandbox, Production
-  final String environment;
+  final String? environment;
 
   /// An indicator that an error occurred during the request. A value of 1
   /// indicates a temporary issue; retry validation for this receipt at a later

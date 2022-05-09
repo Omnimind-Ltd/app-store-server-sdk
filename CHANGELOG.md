@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.5
+
+- Make VerifyReceiptResponse.environment nullable
+
 ## 1.2.4
 
 - Fix static analysis issues

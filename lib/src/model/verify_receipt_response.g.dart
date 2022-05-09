@@ -10,7 +10,7 @@ VerifyReceiptResponse _$VerifyReceiptResponseFromJson(
         Map<String, dynamic> json) =>
     VerifyReceiptResponse(
       status: json['status'] as int,
-      environment: json['environment'] as String,
+      environment: json['environment'] as String?,
       isRetryable: json['is-retryable'] as bool?,
       receipt: json['receipt'] == null
           ? null
@@ -28,7 +28,6 @@ Map<String, dynamic> _$VerifyReceiptResponseToJson(
     VerifyReceiptResponse instance) {
   final val = <String, dynamic>{
     'status': instance.status,
-    'environment': instance.environment,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -37,6 +36,7 @@ Map<String, dynamic> _$VerifyReceiptResponseToJson(
     }
   }
 
+  writeNotNull('environment', instance.environment);
   writeNotNull('is-retryable', instance.isRetryable);
   writeNotNull('receipt', instance.receipt);
   writeNotNull('latest_receipt_info', instance.latestReceiptInfo);
