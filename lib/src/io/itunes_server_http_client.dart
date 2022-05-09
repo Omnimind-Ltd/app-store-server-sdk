@@ -169,14 +169,7 @@ class ITunesEnvironment {
   /// Live or sandbox host
   final String host;
 
-  /// The app specific shared secret
-  final String password;
+  ITunesEnvironment.sandbox() : host = 'sandbox.itunes.apple.com';
 
-  ITunesEnvironment.sandbox({
-    required this.password,
-  }) : host = 'sandbox.itunes.apple.com';
-
-  ITunesEnvironment.live({
-    required this.password,
-  }) : host = 'buy.itunes.apple.com';
+  ITunesEnvironment.live() : host = 'buy.itunes.apple.com';
 }
