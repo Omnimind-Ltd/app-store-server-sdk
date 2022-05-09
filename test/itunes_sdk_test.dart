@@ -25,9 +25,9 @@ void main() {
       return Response(json, HttpStatus.created);
     });
 
-    var appStoreEnvironment = iTunesEnvironment.sandbox(password: _password);
+    var appStoreEnvironment = ITunesEnvironment.sandbox(password: _password);
     _api = iTunesApi(
-        iTunesHttpClient(appStoreEnvironment, client: _mockHttpClient));
+        ITunesHttpClient(appStoreEnvironment, client: _mockHttpClient));
   });
 
   test('Test get refund history', () async {

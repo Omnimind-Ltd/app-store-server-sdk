@@ -6,9 +6,9 @@ import 'model/verify_receipt_response.dart';
 
 /// iTunes API
 class iTunesApi {
-  final iTunesHttpClient _iTunesHttpClient;
+  final ITunesHttpClient _iTunesHttpClient;
 
-  iTunesApi(iTunesHttpClient iTunesHttpClient)
+  iTunesApi(ITunesHttpClient iTunesHttpClient)
       : _iTunesHttpClient = iTunesHttpClient;
 
   /// Send a receipt to the App Store for verification.
@@ -34,7 +34,7 @@ class iTunesApi {
     var url = _iTunesHttpClient.getUrl('/verifyReceipt');
 
     var response =
-    await _iTunesHttpClient.post(url, body: jsonEncode(request.toJson()));
+        await _iTunesHttpClient.post(url, body: jsonEncode(request.toJson()));
 
     return VerifyReceiptResponse.fromJson(jsonDecode(response.body));
   }

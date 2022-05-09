@@ -7,16 +7,17 @@ import 'package:http/http.dart' as http;
 import 'package:logging/logging.dart';
 
 /// iTunes HTTP Client for making authenticated calls to iTunes API
-class iTunesHttpClient extends http.BaseClient {
+class ITunesHttpClient extends http.BaseClient {
   final log = Logger('AppStoreServerSDK');
 
-  final iTunesEnvironment appStoreEnvironment;
+  final ITunesEnvironment appStoreEnvironment;
 
   final bool _loggingEnabled;
 
   late final http.Client _inner;
 
-  iTunesHttpClient(this.appStoreEnvironment, {
+  ITunesHttpClient(
+    this.appStoreEnvironment, {
     http.Client? client,
     bool loggingEnabled = false,
   }) : _loggingEnabled = loggingEnabled {
@@ -48,58 +49,64 @@ class iTunesHttpClient extends http.BaseClient {
   }
 
   @override
-  Future<http.Response> get(Uri url, {
+  Future<http.Response> get(
+    Uri url, {
     Map<String, String>? headers,
   }) async {
     return _makeRequest('GET', url, headers: headers);
   }
 
   @override
-  Future<http.Response> post(Uri url, {
+  Future<http.Response> post(
+    Uri url, {
     Map<String, String>? headers,
     Object? body,
     Encoding? encoding,
   }) async {
-    return _makeRequest(
-        'POST', url, headers: headers, body: body, encoding: encoding);
+    return _makeRequest('POST', url,
+        headers: headers, body: body, encoding: encoding);
   }
 
   @override
-  Future<http.Response> put(Uri url, {
+  Future<http.Response> put(
+    Uri url, {
     Map<String, String>? headers,
     Object? body,
     Encoding? encoding,
   }) async {
-    return _makeRequest(
-        'PUT', url, headers: headers, body: body, encoding: encoding);
+    return _makeRequest('PUT', url,
+        headers: headers, body: body, encoding: encoding);
   }
 
   @override
-  Future<http.Response> patch(Uri url, {
+  Future<http.Response> patch(
+    Uri url, {
     Map<String, String>? headers,
     Object? body,
     Encoding? encoding,
   }) async {
-    return _makeRequest(
-        'PATCH', url, headers: headers, body: body, encoding: encoding);
+    return _makeRequest('PATCH', url,
+        headers: headers, body: body, encoding: encoding);
   }
 
   @override
-  Future<http.Response> delete(Uri url, {
+  Future<http.Response> delete(
+    Uri url, {
     Map<String, String>? headers,
     Object? body,
     Encoding? encoding,
   }) async {
-    return _makeRequest(
-        'DELETE', url, headers: headers, body: body, encoding: encoding);
+    return _makeRequest('DELETE', url,
+        headers: headers, body: body, encoding: encoding);
   }
 
-  Future<http.Response> _makeRequest(String method,
-      Uri url, {
-        Map<String, String>? headers,
-        Object? body,
-        Encoding? encoding,
-      }) async {
+  Future<http.Response> _makeRequest(
+    String method,
+    Uri url, {
+    Map<String, String>? headers,
+    Object? body,
+    Encoding? encoding,
+  }) async {
     headers ??= <String, String>{};
 
     if (body != null) {
@@ -122,20 +129,20 @@ class iTunesHttpClient extends http.BaseClient {
         response = await super.get(url, headers: headers);
         break;
       case 'POST':
-        response =
-        await super.post(url, headers: headers, body: body, encoding: encoding);
+        response = await super
+            .post(url, headers: headers, body: body, encoding: encoding);
         break;
       case 'PUT':
-        response =
-        await super.put(url, headers: headers, body: body, encoding: encoding);
+        response = await super
+            .put(url, headers: headers, body: body, encoding: encoding);
         break;
       case 'PATCH':
-        response = await super.patch(
-            url, headers: headers, body: body, encoding: encoding);
+        response = await super
+            .patch(url, headers: headers, body: body, encoding: encoding);
         break;
       case 'DELETE':
-        response = await super.delete(
-            url, headers: headers, body: body, encoding: encoding);
+        response = await super
+            .delete(url, headers: headers, body: body, encoding: encoding);
         break;
     }
 
@@ -158,18 +165,18 @@ class iTunesHttpClient extends http.BaseClient {
 }
 
 /// Live or sandbox environment
-class iTunesEnvironment {
+class ITunesEnvironment {
   /// Live or sandbox host
   final String host;
 
   /// The app specific shared secret
   final String password;
 
-  iTunesEnvironment.sandbox({
+  ITunesEnvironment.sandbox({
     required this.password,
   }) : host = 'sandbox.itunes.apple.com';
 
-  iTunesEnvironment.live({
+  ITunesEnvironment.live({
     required this.password,
   }) : host = 'buy.itunes.apple.com';
 }

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.2
+
+- Fix static analysis issues
+
 ## 1.2.1
 
 - Update README
