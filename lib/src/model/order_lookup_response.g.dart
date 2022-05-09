@@ -8,14 +8,16 @@ part of 'order_lookup_response.dart';
 
 OrderLookupResponse _$OrderLookupResponseFromJson(Map<String, dynamic> json) =>
     OrderLookupResponse(
-      status: json['status'] as int?,
+      status: json['status'] as int,
       signedTransactions: (json['signedTransactions'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
     );
 
 Map<String, dynamic> _$OrderLookupResponseToJson(OrderLookupResponse instance) {
-  final val = <String, dynamic>{};
+  final val = <String, dynamic>{
+    'status': instance.status,
+  };
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -23,7 +25,6 @@ Map<String, dynamic> _$OrderLookupResponseToJson(OrderLookupResponse instance) {
     }
   }
 
-  writeNotNull('status', instance.status);
   writeNotNull('signedTransactions', instance.signedTransactions);
   return val;
 }
