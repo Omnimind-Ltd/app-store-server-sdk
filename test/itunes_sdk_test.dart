@@ -25,7 +25,7 @@ void main() {
       return Response(json, HttpStatus.created);
     });
 
-    var appStoreEnvironment = ITunesEnvironment.sandbox(password: _password);
+    var appStoreEnvironment = ITunesEnvironment.sandbox();
     _api = iTunesApi(
         ITunesHttpClient(appStoreEnvironment, client: _mockHttpClient));
   });
