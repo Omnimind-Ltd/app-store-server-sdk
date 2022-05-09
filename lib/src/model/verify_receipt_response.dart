@@ -42,14 +42,13 @@ class VerifyReceiptResponse {
   @JsonKey(name: 'pending_renewal_info')
   final List<PendingRenewalInfo>? pendingRenewalInfo;
 
-  VerifyReceiptResponse(
-      {required this.status,
-      required this.environment,
-      this.isRetryable,
-      this.receipt,
-      this.latestReceiptInfo,
-      this.latestReceipt,
-      this.pendingRenewalInfo});
+  VerifyReceiptResponse({required this.status,
+    required this.environment,
+    this.isRetryable,
+    this.receipt,
+    this.latestReceiptInfo,
+    this.latestReceipt,
+    this.pendingRenewalInfo});
 
   Map<String, dynamic> toJson() => _$VerifyReceiptResponseToJson(this);
 
@@ -159,25 +158,24 @@ class Receipt {
   @JsonKey(name: 'in_app')
   final List<ReceiptInfo>? inApp;
 
-  Receipt(
-      {this.receiptType,
-      this.adamId,
-      this.appItemId,
-      this.bundleId,
-      this.applicationVersion,
-      this.downloadId,
-      this.versionExternalIdentifier,
-      this.receiptCreationDate,
-      this.receiptCreationDateMs,
-      this.receiptCreationDatePst,
-      this.requestDate,
-      this.requestDateMs,
-      this.requestDatePst,
-      this.originalPurchaseDate,
-      this.originalPurchaseDateMs,
-      this.originalPurchaseDatePst,
-      this.originalApplicationVersion,
-      this.inApp});
+  Receipt({this.receiptType,
+    this.adamId,
+    this.appItemId,
+    this.bundleId,
+    this.applicationVersion,
+    this.downloadId,
+    this.versionExternalIdentifier,
+    this.receiptCreationDate,
+    this.receiptCreationDateMs,
+    this.receiptCreationDatePst,
+    this.requestDate,
+    this.requestDateMs,
+    this.requestDatePst,
+    this.originalPurchaseDate,
+    this.originalPurchaseDateMs,
+    this.originalPurchaseDatePst,
+    this.originalApplicationVersion,
+    this.inApp});
 
   Map<String, dynamic> toJson() => _$ReceiptToJson(this);
 
@@ -387,19 +385,19 @@ class PendingRenewalInfo {
   /// The time at which the grace period for subscription renewals expires, in a
   /// date-time format similar to the ISO 8601.
   @JsonKey(name: 'grace_period_expires_date')
-  final String? grace_period_expires_date;
+  final String? gracePeriodExpiresDate;
 
   /// The time at which the grace period for subscription renewals expires, in
   /// UNIX epoch time format, in milliseconds. This key is only present for apps
   /// that have Billing Grace Period enabled and when the user experiences a
   /// billing error at the time of renewal. Use this time format for processing dates.
   @JsonKey(name: 'grace_period_expires_date_ms')
-  final String? grace_period_expires_date_ms;
+  final String? gracePeriodExpiresDateMs;
 
   /// The time at which the grace period for subscription renewals expires, in
   /// the Pacific Time zone.
   @JsonKey(name: 'grace_period_expires_date_pst')
-  final String? grace_period_expires_date_pst;
+  final String? gracePeriodExpiresDatePst;
 
   /// The value for this key corresponds to the productIdentifier property of
   /// the product that the customer’s subscription renews.
@@ -436,26 +434,25 @@ class PendingRenewalInfo {
   /// that the user redeemed. You provide this value in the Promotional Offer
   /// Identifier field when you create the promotional offer in App Store Connect.
   @JsonKey(name: 'promotional_offer_id')
-  final String? promotional_offer_id;
+  final String? promotionalOfferId;
 
   /// The current renewal status for the auto-renewable subscription. See
   /// auto_renew_status for more information.
   @JsonKey(name: 'auto_renew_status')
   final String? autoRenewStatus;
 
-  PendingRenewalInfo(
-      {this.expirationIntent,
-      this.grace_period_expires_date,
-      this.grace_period_expires_date_ms,
-      this.grace_period_expires_date_pst,
-      this.autoRenewProductId,
-      this.isInBillingRetryPeriod,
-      this.offerCodeRefName,
-      this.productId,
-      this.originalTransactionId,
-      this.priceConsentStatus,
-      this.promotional_offer_id,
-      this.autoRenewStatus});
+  PendingRenewalInfo({this.expirationIntent,
+    this.gracePeriodExpiresDate,
+    this.gracePeriodExpiresDateMs,
+    this.gracePeriodExpiresDatePst,
+    this.autoRenewProductId,
+    this.isInBillingRetryPeriod,
+    this.offerCodeRefName,
+    this.productId,
+    this.originalTransactionId,
+    this.priceConsentStatus,
+    this.promotionalOfferId,
+    this.autoRenewStatus});
 
   Map<String, dynamic> toJson() => _$PendingRenewalInfoToJson(this);
 
@@ -465,13 +462,13 @@ class PendingRenewalInfo {
   @override
   String toString() {
     return 'PendingRenewalInfo{expirationIntent: $expirationIntent, '
-        'grace_period_expires_date: $grace_period_expires_date,'
-        ' grace_period_expires_date_ms: $grace_period_expires_date_ms, '
-        'grace_period_expires_date_pst: $grace_period_expires_date_pst, '
+        'grace_period_expires_date: $gracePeriodExpiresDate,'
+        ' grace_period_expires_date_ms: $gracePeriodExpiresDateMs, '
+        'grace_period_expires_date_pst: $gracePeriodExpiresDatePst, '
         'autoRenewProductId: $autoRenewProductId, isInBillingRetryPeriod: '
         '$isInBillingRetryPeriod, offerCodeRefName: $offerCodeRefName, productId: '
         '$productId, originalTransactionId: $originalTransactionId, priceConsentStatus: '
-        '$priceConsentStatus, promotional_offer_id: $promotional_offer_id, '
+        '$priceConsentStatus, promotional_offer_id: $promotionalOfferId, '
         'autoRenewStatus: $autoRenewStatus}';
   }
 }

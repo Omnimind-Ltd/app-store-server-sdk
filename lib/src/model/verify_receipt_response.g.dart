@@ -165,10 +165,9 @@ Map<String, dynamic> _$ReceiptInfoToJson(ReceiptInfo instance) {
 PendingRenewalInfo _$PendingRenewalInfoFromJson(Map<String, dynamic> json) =>
     PendingRenewalInfo(
       expirationIntent: json['expiration_intent'] as String?,
-      grace_period_expires_date: json['grace_period_expires_date'] as String?,
-      grace_period_expires_date_ms:
-          json['grace_period_expires_date_ms'] as String?,
-      grace_period_expires_date_pst:
+      gracePeriodExpiresDate: json['grace_period_expires_date'] as String?,
+      gracePeriodExpiresDateMs: json['grace_period_expires_date_ms'] as String?,
+      gracePeriodExpiresDatePst:
           json['grace_period_expires_date_pst'] as String?,
       autoRenewProductId: json['auto_renew_product_id'] as String?,
       isInBillingRetryPeriod: json['is_in_billing_retry_period'] as String?,
@@ -176,7 +175,7 @@ PendingRenewalInfo _$PendingRenewalInfoFromJson(Map<String, dynamic> json) =>
       productId: json['product_id'] as String?,
       originalTransactionId: json['original_transaction_id'] as String?,
       priceConsentStatus: json['price_consent_status'] as String?,
-      promotional_offer_id: json['promotional_offer_id'] as String?,
+      promotionalOfferId: json['promotional_offer_id'] as String?,
       autoRenewStatus: json['auto_renew_status'] as String?,
     );
 
@@ -190,18 +189,18 @@ Map<String, dynamic> _$PendingRenewalInfoToJson(PendingRenewalInfo instance) {
   }
 
   writeNotNull('expiration_intent', instance.expirationIntent);
-  writeNotNull('grace_period_expires_date', instance.grace_period_expires_date);
+  writeNotNull('grace_period_expires_date', instance.gracePeriodExpiresDate);
   writeNotNull(
-      'grace_period_expires_date_ms', instance.grace_period_expires_date_ms);
+      'grace_period_expires_date_ms', instance.gracePeriodExpiresDateMs);
   writeNotNull(
-      'grace_period_expires_date_pst', instance.grace_period_expires_date_pst);
+      'grace_period_expires_date_pst', instance.gracePeriodExpiresDatePst);
   writeNotNull('auto_renew_product_id', instance.autoRenewProductId);
   writeNotNull('is_in_billing_retry_period', instance.isInBillingRetryPeriod);
   writeNotNull('offer_code_ref_name', instance.offerCodeRefName);
   writeNotNull('product_id', instance.productId);
   writeNotNull('original_transaction_id', instance.originalTransactionId);
   writeNotNull('price_consent_status', instance.priceConsentStatus);
-  writeNotNull('promotional_offer_id', instance.promotional_offer_id);
+  writeNotNull('promotional_offer_id', instance.promotionalOfferId);
   writeNotNull('auto_renew_status', instance.autoRenewStatus);
   return val;
 }
