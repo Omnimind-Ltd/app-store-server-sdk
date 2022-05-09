@@ -25,7 +25,7 @@ class VerifyReceiptRequest {
 
   @override
   String toString() {
-    return 'VerifyReceiptRequest{password: $password, receiptData: $receiptData, '
-        'excludeOldTransactions: $excludeOldTransactions}';
+    return 'VerifyReceiptRequest{password: $password, receiptData: '
+        '$receiptData, excludeOldTransactions: $excludeOldTransactions}';
   }
 }

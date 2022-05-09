@@ -5,10 +5,10 @@ import 'model/verify_receipt_request.dart';
 import 'model/verify_receipt_response.dart';
 
 /// iTunes API
-class iTunesApi {
+class ITunesApi {
   final ITunesHttpClient _iTunesHttpClient;
 
-  iTunesApi(ITunesHttpClient iTunesHttpClient)
+  ITunesApi(ITunesHttpClient iTunesHttpClient)
       : _iTunesHttpClient = iTunesHttpClient;
 
   /// Send a receipt to the App Store for verification.

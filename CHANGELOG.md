@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.4
+
+- Fix static analysis issues
+
 ## 1.2.3
 
 - Add missing exports

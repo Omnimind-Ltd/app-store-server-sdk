@@ -42,13 +42,14 @@ class VerifyReceiptResponse {
   @JsonKey(name: 'pending_renewal_info')
   final List<PendingRenewalInfo>? pendingRenewalInfo;
 
-  VerifyReceiptResponse({required this.status,
-    required this.environment,
-    this.isRetryable,
-    this.receipt,
-    this.latestReceiptInfo,
-    this.latestReceipt,
-    this.pendingRenewalInfo});
+  VerifyReceiptResponse(
+      {required this.status,
+      required this.environment,
+      this.isRetryable,
+      this.receipt,
+      this.latestReceiptInfo,
+      this.latestReceipt,
+      this.pendingRenewalInfo});
 
   Map<String, dynamic> toJson() => _$VerifyReceiptResponseToJson(this);
 
@@ -59,7 +60,8 @@ class VerifyReceiptResponse {
   String toString() {
     return 'VerifyReceiptResponse{status: $status, environment: $environment, '
         'receipt: $receipt, latestReceiptInfo: $latestReceiptInfo, '
-        'latestReceipt: $latestReceipt, pendingRenewalInfo: $pendingRenewalInfo}';
+        'latestReceipt: $latestReceipt, '
+        'pendingRenewalInfo: $pendingRenewalInfo}';
   }
 }
 
@@ -158,24 +160,25 @@ class Receipt {
   @JsonKey(name: 'in_app')
   final List<ReceiptInfo>? inApp;
 
-  Receipt({this.receiptType,
-    this.adamId,
-    this.appItemId,
-    this.bundleId,
-    this.applicationVersion,
-    this.downloadId,
-    this.versionExternalIdentifier,
-    this.receiptCreationDate,
-    this.receiptCreationDateMs,
-    this.receiptCreationDatePst,
-    this.requestDate,
-    this.requestDateMs,
-    this.requestDatePst,
-    this.originalPurchaseDate,
-    this.originalPurchaseDateMs,
-    this.originalPurchaseDatePst,
-    this.originalApplicationVersion,
-    this.inApp});
+  Receipt(
+      {this.receiptType,
+      this.adamId,
+      this.appItemId,
+      this.bundleId,
+      this.applicationVersion,
+      this.downloadId,
+      this.versionExternalIdentifier,
+      this.receiptCreationDate,
+      this.receiptCreationDateMs,
+      this.receiptCreationDatePst,
+      this.requestDate,
+      this.requestDateMs,
+      this.requestDatePst,
+      this.originalPurchaseDate,
+      this.originalPurchaseDateMs,
+      this.originalPurchaseDatePst,
+      this.originalApplicationVersion,
+      this.inApp});
 
   Map<String, dynamic> toJson() => _$ReceiptToJson(this);
 
@@ -185,13 +188,15 @@ class Receipt {
   @override
   String toString() {
     return 'Receipt{receiptType: $receiptType, adamId: $adamId, appItemId: '
-        '$appItemId, bundleId: $bundleId, applicationVersion: $applicationVersion, '
-        'downloadId: $downloadId, versionExternalIdentifier: $versionExternalIdentifier,'
-        ' receiptCreationDate: $receiptCreationDate, receiptCreationDateMs: '
-        '$receiptCreationDateMs, receiptCreationDatePst: $receiptCreationDatePst, '
-        'requestDate: $requestDate, requestDateMs: $requestDateMs, requestDatePst: '
-        '$requestDatePst, originalPurchaseDate: $originalPurchaseDate, '
-        'originalPurchaseDateMs: $originalPurchaseDateMs, originalPurchaseDatePst: '
+        '$appItemId, bundleId: $bundleId, applicationVersion: '
+        '$applicationVersion, downloadId: $downloadId, '
+        'versionExternalIdentifier: $versionExternalIdentifier, '
+        'receiptCreationDate: $receiptCreationDate, receiptCreationDateMs: '
+        '$receiptCreationDateMs, receiptCreationDatePst: '
+        '$receiptCreationDatePst, requestDate: $requestDate, requestDateMs: '
+        '$requestDateMs, requestDatePst: $requestDatePst, originalPurchaseDate:'
+        ' $originalPurchaseDate, originalPurchaseDateMs: '
+        '$originalPurchaseDateMs, originalPurchaseDatePst: '
         '$originalPurchaseDatePst, originalApplicationVersion: '
         '$originalApplicationVersion, inApp: $inApp}';
   }
@@ -360,18 +365,21 @@ class ReceiptInfo {
 
   @override
   String toString() {
-    return 'ReceiptInfo{cancellationDate: $cancellationDate, cancellationDateMs: '
-        '$cancellationDateMs, cancellationDatePst: $cancellationDatePst, '
-        'cancellationReason: $cancellationReason, quantity: $quantity, productId: '
-        '$productId, transactionId: $transactionId, originalTransactionId: '
-        '$originalTransactionId, purchaseDate: $purchaseDate, purchaseDateMs: '
-        '$purchaseDateMs, purchaseDatePst: $purchaseDatePst, originalPurchaseDate: '
-        '$originalPurchaseDate, originalPurchaseDateMs: $originalPurchaseDateMs,'
-        ' originalPurchaseDatePst: $originalPurchaseDatePst, expiresDate: $expiresDate, '
-        'expiresDateMs: $expiresDateMs, expiresDatePst: $expiresDatePst, '
-        'webOrderLineItemId: $webOrderLineItemId, isTrialPeriod: $isTrialPeriod,'
-        ' isInIntroOfferPeriod: $isInIntroOfferPeriod, inAppOwnershipType: '
-        '$inAppOwnershipType, subscriptionGroupIdentifier: $subscriptionGroupIdentifier}';
+    return 'ReceiptInfo{cancellationDate: $cancellationDate, '
+        'cancellationDateMs: $cancellationDateMs, cancellationDatePst: '
+        '$cancellationDatePst, cancellationReason: $cancellationReason, '
+        'quantity: $quantity, productId: $productId, transactionId: '
+        '$transactionId, originalTransactionId: $originalTransactionId, '
+        'purchaseDate: $purchaseDate, purchaseDateMs: $purchaseDateMs, '
+        'purchaseDatePst: $purchaseDatePst, originalPurchaseDate: '
+        '$originalPurchaseDate, originalPurchaseDateMs: '
+        '$originalPurchaseDateMs, originalPurchaseDatePst: '
+        '$originalPurchaseDatePst, expiresDate: $expiresDate, expiresDateMs: '
+        '$expiresDateMs, expiresDatePst: $expiresDatePst, webOrderLineItemId: '
+        '$webOrderLineItemId, isTrialPeriod: $isTrialPeriod, '
+        'isInIntroOfferPeriod: $isInIntroOfferPeriod, inAppOwnershipType: '
+        '$inAppOwnershipType, subscriptionGroupIdentifier:'
+        ' $subscriptionGroupIdentifier}';
   }
 }
 
@@ -405,7 +413,9 @@ class PendingRenewalInfo {
   final String? autoRenewProductId;
 
   /// A flag that indicates Apple is attempting to renew an expired subscription
-  /// automatically. This field is only present if an auto-renewable subscription is in the billing retry state. See is_in_billing_retry_period for more information.
+  /// automatically. This field is only present if an auto-renewable subscription
+  /// is in the billing retry state. See is_in_billing_retry_period for more
+  /// information.
   @JsonKey(name: 'is_in_billing_retry_period')
   final String? isInBillingRetryPeriod;
 
@@ -416,7 +426,9 @@ class PendingRenewalInfo {
   final String? offerCodeRefName;
 
   /// The unique identifier of the product purchased. You provide this value
-  /// when creating the product in App Store Connect, and it corresponds to the productIdentifier property of the SKPayment object stored in the transaction's payment property.
+  /// when creating the product in App Store Connect, and it corresponds to the
+  /// productIdentifier property of the SKPayment object stored in the
+  /// transaction's payment property.
   @JsonKey(name: 'product_id')
   final String? productId;
 
@@ -441,18 +453,19 @@ class PendingRenewalInfo {
   @JsonKey(name: 'auto_renew_status')
   final String? autoRenewStatus;
 
-  PendingRenewalInfo({this.expirationIntent,
-    this.gracePeriodExpiresDate,
-    this.gracePeriodExpiresDateMs,
-    this.gracePeriodExpiresDatePst,
-    this.autoRenewProductId,
-    this.isInBillingRetryPeriod,
-    this.offerCodeRefName,
-    this.productId,
-    this.originalTransactionId,
-    this.priceConsentStatus,
-    this.promotionalOfferId,
-    this.autoRenewStatus});
+  PendingRenewalInfo(
+      {this.expirationIntent,
+      this.gracePeriodExpiresDate,
+      this.gracePeriodExpiresDateMs,
+      this.gracePeriodExpiresDatePst,
+      this.autoRenewProductId,
+      this.isInBillingRetryPeriod,
+      this.offerCodeRefName,
+      this.productId,
+      this.originalTransactionId,
+      this.priceConsentStatus,
+      this.promotionalOfferId,
+      this.autoRenewStatus});
 
   Map<String, dynamic> toJson() => _$PendingRenewalInfoToJson(this);
 
@@ -462,13 +475,13 @@ class PendingRenewalInfo {
   @override
   String toString() {
     return 'PendingRenewalInfo{expirationIntent: $expirationIntent, '
-        'grace_period_expires_date: $gracePeriodExpiresDate,'
-        ' grace_period_expires_date_ms: $gracePeriodExpiresDateMs, '
-        'grace_period_expires_date_pst: $gracePeriodExpiresDatePst, '
+        'gracePeriodExpiresDate: $gracePeriodExpiresDate, '
+        'gracePeriodExpiresDateMs: $gracePeriodExpiresDateMs, '
+        'gracePeriodExpiresDatePst: $gracePeriodExpiresDatePst, '
         'autoRenewProductId: $autoRenewProductId, isInBillingRetryPeriod: '
-        '$isInBillingRetryPeriod, offerCodeRefName: $offerCodeRefName, productId: '
-        '$productId, originalTransactionId: $originalTransactionId, priceConsentStatus: '
-        '$priceConsentStatus, promotional_offer_id: $promotionalOfferId, '
-        'autoRenewStatus: $autoRenewStatus}';
+        '$isInBillingRetryPeriod, offerCodeRefName: $offerCodeRefName, '
+        'productId: $productId, originalTransactionId: $originalTransactionId,'
+        ' priceConsentStatus: $priceConsentStatus, promotionalOfferId:'
+        ' $promotionalOfferId, autoRenewStatus: $autoRenewStatus}';
   }
 }
