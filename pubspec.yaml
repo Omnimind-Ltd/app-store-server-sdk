@@ -7,17 +7,17 @@ environment:
   sdk: '>=2.15.0 <3.0.0'
 
 dependencies:
-  json_annotation: ^4.5.0
-  http: ^0.13.4
-  logging: ^1.0.2
+  json_annotation: ^4.7.0
+  http: ^0.13.5
+  logging: ^1.1.0
   uuid: ^3.0.6
   jose: ^0.3.2
 
 dev_dependencies:
-  lints: ^1.0.1
-  test: ^1.21.1
-  build_runner: ^2.1.10
-  json_serializable: ^6.2.0
+  lints: ^2.0.1
+  test: ^1.21.6
+  build_runner: ^2.3.2
+  json_serializable: ^6.5.4
 
 false_secrets:
   - /test/app_store_server_sdk_test.dart
