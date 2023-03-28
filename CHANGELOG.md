@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.6
+
+- Update packages
+
 ## 1.2.5
 
 - Make VerifyReceiptResponse.environment nullable
