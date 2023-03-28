@@ -36,6 +36,4 @@ and <a href="https://pub.dev/documentation/app_store_server_sdk/latest/">API doc
 Please raise issues on <a href="https://github.com/Omnimind-Ltd/app_store_server_sdk/issues">GitHub</a>. Pull requests
 always welcome.
 
-<a href="https://www.buymeacoffee.com/uJ8QjYHOKs" target="_blank">
-<img src="https://i.imgur.com/jccWDIN.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 146px !important;">
-</a>
+<a href="https://www.buymeacoffee.com/uJ8QjYHOKs" target="_blank"><img align="center" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="30px" width= "108px"></a>
