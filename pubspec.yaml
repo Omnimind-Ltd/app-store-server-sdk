@@ -1,23 +1,26 @@
 name: app_store_server_sdk
 description: Apple App Store Server SDK for facilitating integrations with App Store Server API
 homepage: https://github.com/Omnimind-Ltd/app-store-server-sdk
-version: 1.2.7
+version: 1.2.8
 
 environment:
-  sdk: '>=2.15.0 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   json_annotation: ^4.8.0
-  http: ^0.13.5
-  logging: ^1.1.1
+  http: ^1.0.0
+  logging: ^1.2.0
   uuid: ^3.0.7
   jose: ^0.3.3
 
 dev_dependencies:
-  lints: ^2.0.1
-  test: ^1.24.0
-  build_runner: ^2.3.2
-  json_serializable: ^6.6.1
+  lints: ^2.1.1
+  test: ^1.24.3
+  build_runner: ^2.4.5
+  json_serializable: ^6.7.0
+
+dependency_overrides:
+  http: ^1.0.0
 
 false_secrets:
   - /test/app_store_server_sdk_test.dart

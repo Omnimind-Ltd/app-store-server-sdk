@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.2.8
+- Update packages and min Dart SDK.
+
 ## 1.2.7
 - README fix
 
